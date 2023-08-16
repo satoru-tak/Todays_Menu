@@ -23,6 +23,17 @@ module Api
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # I18nライブラリに訳文の探索場所を指示する
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    # タイムゾーンを日本時間に設定する
+    config.time_zone = 'Tokyo'
+    # アクティブレコードのタイムゾーンをローカルに設定する
+    config.active_record.default_timezone = :local
+    # ロケールを:jaに変更する
+    config.i18n.default_locale = :ja
+
+    # ロケールのリストを渡す
+    # I18n.available_locales = [:en, :pt]
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
