@@ -39,6 +39,9 @@ import HelloWorld from './components/HelloWorld.vue'
     <p v-for="food in state.foods" v-bind:key="food.id">
       {{ food.name }} <button @click="handleDeleteFood(food.id)">Delete</button>
     </p>
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
   </div>
 </template>
 
